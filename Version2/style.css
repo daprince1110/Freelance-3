@@ -81,36 +81,126 @@ body {
 }
 
 /* Projects Grid */
+.project-content {
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  flex: 1; /* Ensures consistent height */
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  color: #00ff00;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.project-description {
+  color: #b0b0b0;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  flex: 1; /* Takes up remaining space */
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
 }
 
 .project-card {
   background-color: #0a0a0a;
-  padding: 1.5rem;
   border: 1px solid #00ff00;
-  border-radius: 5px;
-  transition: transform 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  aspect-ratio: 1 / 1; /* Makes the cards square */
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 15px #00ff00;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
 }
 
-.tech-stack {
-  margin-top: 1rem;
+.project-image {
+  position: relative;
+  flex: 1; /* Takes up remaining space */
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.1);
+}
+
+.project-content {
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.project-title {
+  color: #00ff00;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.project-tags {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
 }
 
-.tech-stack span {
+.project-tags span {
   background-color: #1a4d1a;
   padding: 0.3rem 0.7rem;
   border-radius: 3px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+}
+
+/* Add these to your style.css */
+.project-links {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2; /* Ensures icons stay on top */
+}
+
+.project-link {
+  color: #00ff00 !important; /* Force green color */
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.2rem; /* Ensure icon size */
+}
+
+.project-link i {
+  vertical-align: middle; /* Fix icon alignment */
 }
 
 /* Contact Form */

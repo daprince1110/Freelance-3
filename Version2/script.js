@@ -37,17 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
       requestAnimationFrame(drawMatrix);
   }
 
-  // Glitch effect on section titles
-  const glitchElements = document.querySelectorAll('.section-title');
-  glitchElements.forEach(element => {
-      setInterval(() => {
-          element.style.textShadow = `
-              ${Math.random() * 5}px ${Math.random() * 5}px 0 rgba(0,255,0,0.7),
-              ${Math.random() * -5}px ${Math.random() * -5}px 0 rgba(0,255,0,0.7)
-          `;
-          element.style.transform = `translate(${Math.random() * 4 - 2}px, ${Math.random() * 4 - 2}px)`;
-      }, 50);
-  });
 
   // Scanning line animation
   const scanLine = document.createElement('div');
@@ -153,4 +142,21 @@ document.addEventListener('DOMContentLoaded', () => {
           cursor.classList.toggle('cursor-blink');
       }, 500);
   });
+});
+
+// Add this to your existing script.js
+const projectCards = document.querySelectorAll('.project-card');
+
+projectCards.forEach(card => {
+    const image = card.querySelector('.project-image img');
+    const originalSrc = image.src;
+    
+    // Add hover effect
+    card.addEventListener('mouseenter', () => {
+        image.src = originalSrc.replace('text=', 'text=>>>+>>>');
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        image.src = originalSrc;
+    });
 });
