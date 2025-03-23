@@ -64,6 +64,7 @@ body {
   padding: 0 2rem;
 }
 
+
 .section {
   margin-bottom: 4rem;
   padding: 2rem;
@@ -71,6 +72,10 @@ body {
   border: 1px solid #00ff00;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 255, 0, 0.1);
+  min-height: 100vh; /* Added */
+  display: flex; /* Added */
+  flex-direction: column; /* Added */
+  justify-content: center; /* Added */
 }
 
 .section-title {
@@ -245,6 +250,12 @@ body {
 .terminal-text {
   white-space: pre-wrap;
   animation: terminal-text 1s steps(40) infinite;
+  font-size: 1.2rem; /* Increased */
+  max-width: 800px; /* Added */
+  margin: 0 auto; /* Centered */
+  padding: 2rem; /* Increased */
+  border: 1px solid #00ff00; /* Added */
+  background: rgba(0, 0, 0, 0.5); /* Added */
 }
 
 .green-text {
@@ -339,4 +350,16 @@ body {
   position: absolute;
   background: #0f0;
   border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .section {
+    min-height: auto; /* Allow natural height on mobile */
+    padding: 1.5rem;
+  }
+  
+  .terminal-text {
+    font-size: 1rem;
+    padding: 1rem;
+  }
 }
