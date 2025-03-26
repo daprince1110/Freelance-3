@@ -322,6 +322,78 @@ body {
   to { opacity: 1; }
 }
 
+/* GIANT TEXT STYLES */
+#about {
+  font-size: 3rem; /* Base size */
+  min-height: 100vh;
+  padding: 5rem;
+}
+
+.giant-text {
+  font-size: 4.5rem;
+  line-height: 1.2;
+  margin: 4rem 0;
+}
+
+.glow {
+  text-shadow: 0 0 40px #00ff00;
+  color: #00ff00;
+}
+
+.prompt {
+  font-size: 5rem;
+  vertical-align: middle;
+}
+
+.command {
+  font-size: 4rem;
+  color: #00ff9d;
+}
+
+.bracket {
+  font-size: 6rem;
+  color: #00ff00;
+  margin: 2rem 0;
+}
+
+.accent {
+  font-size: 5rem;
+  color: #00ff9d;
+  display: inline-block;
+  margin: 0 2rem;
+}
+
+.cursor {
+  font-size: 6rem;
+  animation: blink 1s infinite;
+}
+
+/* Ensure full width */
+.terminal-body {
+  max-width: 100%;
+  overflow: visible;
+}
+
+/* Mobile scaling */
+@media (max-width: 768px) {
+  #about {
+    font-size: 2rem;
+    padding: 2rem;
+  }
+  
+  .giant-text {
+    font-size: 3rem;
+  }
+  
+  .command {
+    font-size: 2.5rem;
+  }
+  
+  .accent {
+    font-size: 3rem;
+  }
+}
+
 /* Add to style.css */
 .cursor-blink::after {
   content: '_';
@@ -352,14 +424,3 @@ body {
   border-radius: 50%;
 }
 
-@media (max-width: 768px) {
-  .section {
-    min-height: auto; /* Allow natural height on mobile */
-    padding: 1.5rem;
-  }
-  
-  .terminal-text {
-    font-size: 1rem;
-    padding: 1rem;
-  }
-}
